@@ -41,6 +41,11 @@ button{
     align-items: center;
 }
 
+#control{
+    max-width: 10rem;
+    margin: auto;
+}
+
 .board{
     display: flex;
     flex-direction: column;
@@ -117,4 +122,17 @@ button{
 .progress-bar{
     display: block;
     margin: auto;
+}
+
+.d-none{
+    display: none;
+}
+
+.active{
+    background-color: rgb(147, 176, 147);
+}
+
+.instruction li{
+    font-size: medium;
+    margin-bottom: 0.2rem;
 }
