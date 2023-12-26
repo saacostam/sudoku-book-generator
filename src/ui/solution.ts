@@ -1,6 +1,5 @@
 import { buildBoardDivElement } from ".";
 import { RichSudoku } from "../types";
-import { logProgress } from "../util";
 
 export const buildSolutionPageDivElement = (richSudokus: RichSudoku[]): HTMLDivElement => {
     if (richSudokus.length > 9) throw new Error('Trying to render more than 9 solutions in solution page');
@@ -44,13 +43,14 @@ const buildSolutionPageDivElementCb = (
 ) => {
     if (solutionPageIndex >= pagesOfSudokus.length) return;
 
-    logProgress((solutionPageIndex+1)/pagesOfSudokus.length);
-
     const solutionPage = pagesOfSudokus[solutionPageIndex];
     const solutionPageDivElement = buildSolutionPageDivElement(solutionPage);
     onBuilt(solutionPageDivElement);
 
-    buildSolutionPageDivElementCb(solutionPageIndex+1, pagesOfSudokus, onBuilt);
+    setTimeout(
+        () => buildSolutionPageDivElementCb(solutionPageIndex+1, pagesOfSudokus, onBuilt),
+        0,
+    );
 }
 
 export const batchBuildSolutionPageDivElement = (pagesOfSudokus: RichSudoku[][], onBuilt: buildSolutionPageDivCbOnBuild) => buildSolutionPageDivElementCb(0, pagesOfSudokus, onBuilt);
