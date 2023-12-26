@@ -1,6 +1,6 @@
 import './style.css';
 
-import { buildConfigDivElement, buildControlDivElement } from './ui';
+import { buildConfigDivElement, buildControlDivElement, buildInstructionsDivElement } from './ui';
 
 const ui = document.querySelector<HTMLDivElement>('div#ui');
 if (!ui) throw new Error('UI div is null!');
@@ -16,3 +16,6 @@ ui.append(configDivElement);
 
 const controlDivElement = buildControlDivElement(app, getConfig);
 control.append(controlDivElement);
+
+const instructionDivElement = buildInstructionsDivElement();
+control.append(instructionDivElement);
