@@ -18,8 +18,8 @@ export const buildInstructionsDivElement = (): HTMLDivElement => {
     instructionUnorderedListElement.className = 'd-none';
     [
         'Set the difficulty and the number of sudokus for each difficulty, using the select and number input.',
-        'The output puzzles with keep the order in which they were defined.',
-        'The generate CTA generates and stores the puzzles in the localStorage. Also, the progress is shown in the progress-bar.',
+        'The output puzzles will keep the order in which they were defined.',
+        'The generate CTA generates and stores the puzzles in the localStorage.',
         'The generate process may take some as the puzzles are being generated and solved.',
         'The export CTA generates a pdf file based on the puzzles stored in the localStorage.',
         'The generate CTA should be called before the export CTA (💩-UX).',
