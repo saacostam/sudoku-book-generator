@@ -17,3 +17,4 @@ export type Config = {
 }
 
 export type UpdateProgressBar = (newProgressValue: number) => void;
+export type IndependentCallback = () => void;

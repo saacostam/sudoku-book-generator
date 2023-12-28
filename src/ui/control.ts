@@ -25,8 +25,9 @@ export const buildControlDivElement = (
     const exportHandler = () => {
         clear(app);
         const allSudokus = getListOfSudokus();
-        buildBookDivElement(app, allSudokus);
-        window.print(); 
+        buildBookDivElement(app, allSudokus, () => {
+            window.print(); 
+        });
     }
 
     const generateHandler = () => {
